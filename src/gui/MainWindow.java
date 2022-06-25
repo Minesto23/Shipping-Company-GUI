@@ -491,17 +491,19 @@ private JFrame mainWindow;
 		itemInfoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent y) {
 				int i;
-				
+				try {
 				i = list.getSelectedIndex();
 				ArrayList <String> itemdata = new ArrayList<>();
 				
 				itemdata = order.printItemInformation(i);
-				try {
+				
 					ItemInfo dialog = new ItemInfo(itemdata);
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
-				} catch (Exception e1) {
-					e1.printStackTrace();
+				} catch (IndexOutOfBoundsException e1) {
+					ItemErrorMessage error = new ItemErrorMessage();
+					error.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					error.setVisible(true);
 				}
 				
 			}
