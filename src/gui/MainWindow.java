@@ -63,7 +63,7 @@ private JFrame mainWindow;
 		main_panel.setLayout(null);
 		
 		JLabel labelTitle = new JLabel("Welcome to your Best Shipping Option");
-		labelTitle.setBounds(165, 72, 661, 42);
+		labelTitle.setBounds(165, 72, 661, 60);
 		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitle.setForeground(Color.WHITE);
 		labelTitle.setFont(new Font("Arial", Font.BOLD, 36));
@@ -348,6 +348,12 @@ private JFrame mainWindow;
 
 		panel.add(list);
 		
+		productShapeComboBox.setVisible(false);
+		productNameTextField.setVisible(false);
+		weighText.setVisible(false);
+		QuantityTextField.setVisible(false);
+		list.setVisible(false);
+		
 		JButton addButton = new JButton("Add Item");
 		addButton.setEnabled(false);
 		addButton.setBackground(Color.GRAY);
@@ -419,6 +425,11 @@ private JFrame mainWindow;
 			public void actionPerformed(ActionEvent e1) {
 				main_panel.setVisible(false);
 				inputPanel.setVisible(true);
+				productShapeComboBox.setVisible(true);
+				productNameTextField.setVisible(true);
+				weighText.setVisible(true);
+				QuantityTextField.setVisible(true);
+				list.setVisible(true);
 				
 			}
 		});
